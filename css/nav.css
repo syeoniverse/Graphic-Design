@@ -1,0 +1,83 @@
+@import url(./reset.css);
+@import url(./font/pretendard.css);
+span {
+  display: block;
+}
+
+footer {
+  background: #111;
+  height: 240px;
+  width: 100%;
+  min-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+}
+footer ul {
+  width: 100%;
+  display: flex;
+}
+footer ul li {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+  font-size: 15px;
+  font-family: "Pretendard ExtraLight";
+}
+footer ul li img {
+  width: 18px;
+}
+footer p {
+  color: #fff;
+  text-align: right;
+  padding: 30px;
+  font-size: 14px;
+}
+
+nav {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  border-radius: 99px;
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.5s;
+}
+nav:hover {
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0.8);
+}
+nav:hover a {
+  color: #fff;
+}
+nav a {
+  color: #000;
+  font-size: 18px;
+  font-family: "Pretendard Regular";
+  padding: 12px 26px;
+}
+
+@media screen and (max-width: 1000px) {
+  footer ul li {
+    font-size: 14px;
+    font-family: "Pretendard ExtraLight";
+  }
+  footer ul li img {
+    width: 20px;
+  }
+  footer p {
+    font-size: 12px;
+  }
+}

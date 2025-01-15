@@ -1,0 +1,453 @@
+@import url(./reset.css);
+@import url(./font/pretendard.css);
+$font-size-1: 64px;
+$font-size-2: 32px;
+$font-size-3: 24px;
+$font-size-4: 18px;
+$font-size-5: 15px;
+$font-size-6: 14px;
+$font-style: normal;
+
+$font-family-EB: 'Pretendard ExtraBold';
+$font-family-B: 'Pretendard Bold';
+$font-family-SB: 'Pretendard SemiBold';
+$font-family-M: 'Pretendard Medium';
+$font-family-R: 'Pretendard Regular';
+$font-family-L: 'Pretendard Light';
+$font-family-EL: 'Pretendard ExtraLight';
+$font-weight: normal;
+
+@mixin font-styles($size, $family) {
+  font-size: $size;
+  font-family: $family;
+}
+
+.text {
+  @include font-styles($font-size-1, $font-family-B);
+}
+
+li b {
+  @include font-styles($font-size-3, $font-family-R);
+}
+
+li {
+  @include font-styles($font-size-4, $font-family-L);
+}
+
+h3 {
+  @include font-styles($font-size-3, $font-family-SB);
+}
+
+p {
+  @include font-styles($font-size-4, $font-family-EL);
+}
+body{
+ -ms-overflow-style: none;
+ }
+ 
+::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  // overflow: hidden;
+}
+
+#intro {
+  position: relative;
+  background: #111111;
+
+  .text {
+    text-align: center;
+    width: 100%;
+    background: #111;
+    position: absolute;
+    color: #fff;
+    opacity: 0;
+    top: 50px;
+    padding: 100px;
+
+    &:nth-child(1) {
+      opacity: 1;
+      top: -50px;
+    }
+  }
+
+  .profile {
+    width: 80%;
+    max-width: 1200px;
+    height: 80%;
+    margin: auto;
+    position: relative;
+    top: 20%;
+
+    .desc {
+      width: 100%;
+      height: 60%;
+      gap: 30px;
+      align-items: center;
+
+      figure {
+        width: 40%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 9;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      .info {
+        width: 60%;
+        flex-wrap: wrap;
+        gap: 60px;
+
+        h3 {
+          padding: 20px;
+          color: #fff;
+
+          b {
+            @include font-styles($font-size-4, $font-family-EL);
+          }
+        }
+
+        ul {
+          padding: 0 20px;
+        }
+
+        li {
+          color: #fff;
+          gap: 40px;
+          padding-bottom: 10px;
+
+          h4 {
+            line-height: 1.4;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 1.4;
+          }
+        }
+      }
+
+
+    }
+
+    .tool {
+      width: 90%;
+      height: 40%;
+      margin: auto;
+      align-items: center;
+
+      div {
+        width: 100%;
+      }
+
+      h3 {
+        padding: 10px;
+        color: #fff;
+      }
+
+      ul {
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+
+        li {
+          width: 70px;
+          color: #fff;
+          text-align: center;
+          @include font-styles($font-size-5, $font-family-L);
+
+
+          figure {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 10px;
+
+            img {
+              width: 100%;
+            }
+
+          }
+        }
+
+      }
+    }
+
+
+  }
+}
+
+
+section.history-section {
+  position: relative;
+  height: 230vh;
+
+  .splide {
+    width: 100%;
+    background: #000;
+    position: sticky;
+    top: 0;
+    left: 0%;
+    z-index: 9;
+    overflow: hidden;
+
+    .splide__track {
+      .splide__list {
+        background: #000;
+        display: flex;
+        color: #fff;
+      }
+
+      .splide__slide {
+        background: #000;
+        padding: 20px 40px;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .splide__slide.is-active {
+        color: chartreuse;
+      }
+
+      img {
+        width: 100px;
+      }
+
+    }
+  }
+
+  .history {
+    width: 70%;
+    min-width: 1100px;
+    margin: auto;
+    padding: 120px;
+
+    h1.title {
+      @include font-styles($font-size-1, $font-family-B);
+      text-align: center;
+      margin-bottom: 120px;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 40vh;
+
+      .history-wrap {
+        display: flex;
+
+        // 왼쪽
+        .history-sticky {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          font-size: 50px;
+          height: 100px;
+          position: sticky;
+          top: 40vh;
+          
+
+          svg {
+            width: 20px;
+          }
+        }
+
+        // 오른쪽
+        .histiory-right {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .history-item {
+            display: flex;
+
+            .history-line {
+              border-left: 2px solid #000;
+              height: calc(100% + 10px);
+              transform: translate(-12px, -5px);
+              z-index: -1;
+
+              &.line1 {
+                height: 100%;
+                transform: translate(-12px, calc(100% / 4));
+              }
+
+              &.line2 {
+                height: 100%;
+                transform: translate(-12px, calc(100% / -4));
+              }
+            }
+
+            li {
+              height: 100px;
+              display: flex;
+              cursor: default;
+            }
+
+            .main {
+              padding: 16px;
+              @include font-styles($font-size-2, $font-family-B);
+            }
+
+            .sub {
+              p {
+                &:nth-child(1) {
+                  font-family: 'Pretendard Medium';
+                }
+
+                &:nth-child(2) {
+                  font-size: 16px;
+                }
+              }
+
+              padding: 20px;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+footer {
+  height: 300px;
+  background: #333;
+}
+
+@media screen and (max-width:1000px) {
+
+
+  #intro {
+
+    .text {
+      font-size: 36px;
+      top: 30px;
+      padding: 100px 0;
+
+      &:nth-child(1) {
+        top: -70px;
+      }
+    }
+
+    .profile {
+      width: 90%;
+      height: 86%;
+      top: 14%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .desc {
+        width: 100%;
+        height: 50%;
+        gap: 10px;
+        align-items: center;
+
+        figure {
+          width: 50%;
+        }
+
+        .info {
+          gap: 30px;
+        }
+      }
+
+      .tool {
+        ul {
+          gap: 20px;
+          justify-content: left;
+
+          li {
+            width: 60px;
+            @include font-styles($font-size-6, $font-family-L);
+          }
+        }
+      }
+    }
+  }
+
+
+  section.history-section {
+    .history {
+      width: 90%;
+      padding: 100px 0;
+      min-width: 700px;
+
+      .sticky {
+        .history-wrap {
+
+          // 왼쪽
+          .history-sticky {
+            font-size: 36px;
+
+            svg {
+              width: 16px;
+            }
+          }
+
+          // 오른쪽
+          .histiory-right {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .history-item {
+              display: flex;
+
+              .history-line {
+                transform: translate(-9px, -5px);
+
+                &.line1 {
+                  transform: translate(-9px, calc(100% / 4));
+                }
+
+                &.line2 {
+                  transform: translate(-9px, calc(100% / -4));
+                }
+              }
+
+              .main {
+                font-size: 28px;
+              }
+
+              .sub {
+                p {
+                  font-size: 16px;
+
+                  &:nth-child(2) {
+                    font-size: 14px;
+                  }
+                }
+
+                padding: 20px 0;
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+
+}

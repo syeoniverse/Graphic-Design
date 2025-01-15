@@ -1,0 +1,119 @@
+@import url(./reset.css);
+@import url(./font/pretendard.css);
+$font-size-1: 64px;
+$font-size-2: 32px;
+$font-size-3: 24px;
+$font-size-4: 18px;
+$font-size-5: 15px;
+$font-size-6: 14px;
+$font-style: normal;
+
+$font-family-EB: 'Pretendard ExtraBold';
+$font-family-B: 'Pretendard Bold';
+$font-family-SB: 'Pretendard SemiBold';
+$font-family-M: 'Pretendard Medium';
+$font-family-R: 'Pretendard Regular';
+$font-family-L: 'Pretendard Light';
+$font-family-EL: 'Pretendard ExtraLight';
+$font-weight: normal;
+
+@mixin font-styles($size, $family) {
+  font-size: $size;
+  font-family: $family;
+}
+
+span {
+  display: block;
+}
+
+// footer
+footer {
+  background: #111;
+  height: 240px;
+  width: 100%;
+  min-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+
+  ul {
+    width: 100%;
+    display: flex;
+
+    li {
+      width: 100%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 40px;
+      @include font-styles($font-size-5, $font-family-EL);
+
+      img {
+        width: 18px;
+      }
+    }
+
+  }
+
+  p {
+    color: #fff;
+    text-align: right;
+    padding: 30px;
+    font-size: 14px;
+  }
+}
+
+nav {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  // height: 50px;
+  // width:120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  border-radius: 99px;
+  
+  border: 1px solid #000;
+  background: rgba($color: #fff, $alpha: 0.2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: .5s;
+&:hover{
+
+  border: 1px solid #fff;
+  background: rgba($color: #000, $alpha: 0.8);
+}
+&:hover a{
+  color: #fff;
+}
+  a {
+    color: #000;
+    @include font-styles($font-size-4, $font-family-R);
+padding: 12px 26px;
+  }
+}
+
+
+@media screen and (max-width:1000px) {
+  footer {
+    ul {
+      li {
+        @include font-styles($font-size-6, $font-family-EL);
+
+        img {
+          width: 20px;
+        }
+      }
+
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+}

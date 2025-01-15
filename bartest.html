@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll and Hover Interaction</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      overflow-y: scroll;
+      height: 200vh;
+      /* Scrollable page */
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+    }
+
+    .item {
+      position: relative;
+      padding: 20px;
+      margin: 20px 0;
+      background-color: #e0e0e0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .hover-image {
+      position: fixed;
+      pointer-events: none;
+      width: 150px;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.3s ease;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item" data-image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/222579/beagle400.jpg">Item 1</div>
+    <div class="item" data-image="https://media.bunjang.co.kr/product/233373989_1_1692196944_w360.jpg">Item 2</div>
+    <div class="item" data-image="https://media.bunjang.co.kr/product/290560668_1_1726999221_w360.jpg">Item 3</div>
+    <div class="item" data-image="https://pbs.twimg.com/media/GPmM6YCbYAEN4oJ.jpg">Item 4</div>
+  </div>
+
+  <div class="hover-image"></div>
+
+  <script>
+    const items = document.querySelectorAll('.item');
+    const hoverImage = document.querySelector('.hover-image');
+    let activeItem = null;
+
+    // Update the hover image position
+    function updateHoverImagePosition(e) {
+      hoverImage.style.left = `${e.pageX}px`;
+      hoverImage.style.top = `${e.pageY}px`;
+    }
+
+    // Check which item the mouse is currently over (during scroll or movement)
+    function updateActiveItem(e) {
+      const mouseY = e.clientY; // Mouse Y position relative to viewport
+      items.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (mouseY >= rect.top && mouseY <= rect.bottom) {
+          if (activeItem !== item) {
+            activeItem = item;
+            const imageUrl = item.getAttribute('data-image');
+            hoverImage.style.backgroundImage = `url(${imageUrl})`;
+            hoverImage.style.display = 'block'; // Show the hover image
+          }
+        }
+      });
+    }
+
+    // Hide hover image when not over any item
+    function hideHoverImage() {
+      activeItem = null;
+      hoverImage.style.display = 'none';
+    }
+
+    // Mouse move event
+    document.addEventListener('mousemove', (e) => {
+      updateHoverImagePosition(e);
+      updateActiveItem(e);
+    });
+
+    // Scroll event
+    document.addEventListener('scroll', (e) => {
+      const mouseEvent = { clientY: hoverImage.offsetTop }; // Simulate a mouse event using hover image position
+      updateActiveItem(mouseEvent);
+    });
+
+    // Initial setup to hide the hover image
+    hoverImage.style.display = 'none';
+
+
+
+
+    items.forEach(item => {
+      item.addEventListener('mouseenter', (e) => {
+        const imageUrl = e.target.getAttribute('data-image');
+        image.setAttribute("xlink:href", imageUrl); // 기본 clip-path 설정
+        hoverImage.style.opacity = '1';
+      });
+
+      item.addEventListener('mouseleave', () => {
+        hoverImage.style.opacity = '0';
+      });
+
+      item.addEventListener('mousemove', (e) => {
+        const rect = hoverImage.getBoundingClientRect();
+        const jitterX = 120; // Optional jitter effect
+        const jitterY = 0;
+
+        hoverImage.style.left = `${e.pageX + jitterX - rect.width / 2}px`;
+        hoverImage.style.top = `${e.pageY + jitterY - rect.height / 2}px`;
+      });
+    });
+  </script>
+</body>
+
+</html>

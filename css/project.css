@@ -37,7 +37,7 @@ main section {
 .intro .wrap .desc h1 {
   font-size: 32px;
   font-family: "Pretendard Bold";
-  line-height: 1.2;
+  line-height: 1.4;
   padding: 20px 0 10px 0;
 }
 .intro .wrap .desc p {
@@ -98,6 +98,12 @@ main section {
 .intro .wrap .main-visual.sk-mysuni {
   background-image: url(../image/sk-mysuni/newsletterbg.png);
 }
+.intro .wrap .main-visual.ppt {
+  background-image: url(../image/presentation/main.png);
+}
+.intro .wrap .main-visual.daycare {
+  background-image: url(../image/daycare/main2.png);
+}
 
 .work {
   width: 100%;
@@ -107,16 +113,21 @@ main section {
   contain: paint;
 }
 .work .work__title {
-  font-size: 3vw;
-  line-height: 1.6;
+  font-size: 2vw;
+  line-height: 1.2;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #fff;
   /* margin-bottom: 50px; */
 }
 .work .work__title p {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Pretendard Light";
   margin-top: -10px;
+}
+.work .work__title p:nth-child(2) {
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: "Pretendard Light";
 }
 .work .work__title p:nth-last-child(1) {
   margin-top: 10px;
@@ -234,6 +245,63 @@ main section {
 }
 .work .work__wrap.menu article.work__item:hover figure img {
   filter: brightness(1);
+}
+.work .work__wrap.daycare_poster article.work__item {
+  margin-top: -50px;
+  width: 380px;
+  height: 560px;
+}
+.work .work__wrap.daycare_poster article.work__item figure {
+  width: 100%;
+  height: 92%;
+  overflow: hidden;
+  position: relative;
+}
+.work .work__wrap.daycare_poster article.work__item figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.work .work__wrap.daycare_banner article.work__item {
+  margin-top: -50px;
+  width: 780px;
+  height: 280px;
+}
+.work .work__wrap.daycare_banner article.work__item figure {
+  width: 100%;
+  height: 92%;
+  overflow: hidden;
+  position: relative;
+}
+.work .work__wrap.daycare_banner article.work__item figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.work .work__wrap.ppt article.work__item {
+  margin-top: -50px;
+  width: 680px;
+  height: 460px;
+}
+.work .work__wrap.ppt article.work__item figure {
+  width: 100%;
+  height: 92%;
+  overflow: hidden;
+  position: relative;
+}
+.work .work__wrap.ppt article.work__item figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .work .work__wrap article.work__item {
   flex-shrink: 0;

@@ -36,7 +36,7 @@ const splide = new Splide('.splide', {
 
 
   breakPoints: {
-    1200: { perPage: 3 },
+    1200: { perPage: 6 },
     600: { perPage: 3 },
 
   }
@@ -45,3 +45,38 @@ const splide = new Splide('.splide', {
 
 
 splide.mount(window.splide.Extensions)
+
+
+// 호버했을 때 text 등장
+const items = document.querySelectorAll('.item');
+const hoverText = document.querySelector('.hover-text');
+const historySection = document.querySelector('.history-section'); // history-section 선택
+
+items.forEach(item => {
+  // Show multi-line text on hover
+  item.addEventListener('mouseenter', (e) => {
+    const htmlContent = e.target.getAttribute('data-html'); // Get multi-line HTML content
+    hoverText.innerHTML = htmlContent; // Insert HTML into hover-text
+    hoverText.style.opacity = '1'; // Show hover-text
+  });
+
+  // Hide hover-text when mouse leaves
+  item.addEventListener('mouseleave', () => {
+    hoverText.style.opacity = '0';
+  });
+
+  // Move hover-text with the mouse (relative to history-section)
+  item.addEventListener('mousemove', (e) => {
+    const sectionRect = historySection.getBoundingClientRect(); // Get history-section bounds
+    const offsetX =-300; // Offset for text position
+    const offsetY = -400;
+
+    // Calculate mouse position relative to history-section
+    const mouseX = e.clientX - sectionRect.left; // X relative to history-section
+    const mouseY = e.clientY - sectionRect.top; // Y relative to history-section
+
+    // Adjust hover-text position
+    hoverText.style.left = `${mouseX + offsetX}px`;
+    hoverText.style.top = `${mouseY + offsetY}px`;
+  });
+});

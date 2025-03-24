@@ -74,6 +74,12 @@ p {
 #wrap .bg li:nth-of-type(6) {
   background-image: url(../image/sk-mysuni/newsletterbg.png);
 }
+#wrap .bg li:nth-of-type(7) {
+  background-image: url(../image/presentation/main.png);
+}
+#wrap .bg li:nth-of-type(8) {
+  background-image: url(../image/daycare/main.png);
+}
 #wrap .swiper-wrapper {
   width: 100%;
   height: 60%;

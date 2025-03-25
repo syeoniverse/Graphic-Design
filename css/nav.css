@@ -62,11 +62,75 @@ nav:hover {
 nav:hover a {
   color: #fff;
 }
+nav:hover a div {
+  background-color: #fff;
+}
 nav a {
   color: #000;
   font-size: 18px;
   font-family: "Pretendard Regular";
   padding: 12px 26px;
+}
+nav a div {
+  background: #000;
+}
+nav a.next,
+nav a.prev {
+  position: relative;
+}
+nav a.next .arrow,
+nav a.prev .arrow {
+  width: 30px;
+  height: 1px;
+  position: absolute;
+  top: 25px;
+  transition: 0.3s;
+}
+nav a.next .arrowhead,
+nav a.prev .arrowhead {
+  width: 15px;
+  height: 1px;
+  position: absolute;
+  top: 21px;
+  transition: 0.3s;
+}
+nav a.next p,
+nav a.prev p {
+  opacity: 0;
+  transition: 0.5s;
+}
+nav a.next.next .arrow,
+nav a.prev.next .arrow {
+  right: 30px;
+}
+nav a.next.next .arrowhead,
+nav a.prev.next .arrowhead {
+  transform: rotate(30deg);
+  right: 31px;
+}
+nav a.next.prev .arrow,
+nav a.prev.prev .arrow {
+  left: 30px;
+}
+nav a.next.prev .arrowhead,
+nav a.prev.prev .arrowhead {
+  transform: rotate(-30deg);
+  left: 31px;
+}
+nav a.next:hover > .arrow,
+nav a.prev:hover > .arrow {
+  width: 0;
+  transform: rotate(0deg);
+}
+nav a.next:hover > .arrowhead,
+nav a.prev:hover > .arrowhead {
+  width: 0;
+  transform: rotate(0deg) translateY(5px);
+}
+nav a.next:hover > p,
+nav a.prev:hover > p {
+  opacity: 1;
+  transition-delay: 0.2s;
 }
 
 @media screen and (max-width: 1000px) {

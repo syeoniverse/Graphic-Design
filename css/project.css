@@ -144,7 +144,7 @@ main section {
   margin-left: 100px;
 }
 .work .work__wrap.keeper-price article.work__item {
-  margin-top: -30px;
+  margin-top: -50px;
   width: 600px;
   height: 600px;
   position: relative;
@@ -169,42 +169,53 @@ main section {
 .work .work__wrap.keeper-price article.work__item:nth-child(1):hover figure img {
   filter: brightness(1);
 }
+.work .work__wrap.margin article.work__item {
+  margin-top: -50px;
+}
 .work .work__wrap.keeper-leaflet article.work__item {
   width: 630PX;
 }
 .work .work__wrap.xg-poster article.work__item {
-  margin-top: -50px;
+  margin-top: -60px;
+  width: 460px;
 }
 .work .work__wrap.xg-poster article.work__item:hover {
-  margin-top: -70px;
+  margin-top: -100px;
+}
+.work .work__wrap.xg-poster article.work__item figure {
+  width: 100%;
+  height: 92%;
 }
 .work .work__wrap.newsletter article.work__item {
   margin-top: -80px;
-  width: 400px;
-  height: 660px;
+  width: 440px;
+  height: 600px;
 }
 .work .work__wrap.newsletter article.work__item:hover {
-  margin-top: -100px;
+  margin-top: -80px;
 }
 .work .work__wrap.newsletter article.work__item figure {
   width: 100%;
   height: 92%;
 }
-.work .work__wrap.newsletter article.work__item:nth-child(-n+3) figure {
+.work .work__wrap.newsletter article.work__item figure {
   overflow: scroll;
   -ms-overflow-style: none;
 }
-.work .work__wrap.newsletter article.work__item:nth-child(-n+3) figure::-webkit-scrollbar {
+.work .work__wrap.newsletter article.work__item figure img {
+  filter: brightness(0.7);
+}
+.work .work__wrap.newsletter article.work__item figure::-webkit-scrollbar {
   display: none;
 }
-.work .work__wrap.newsletter article.work__item:nth-child(-n+3) .scroll {
+.work .work__wrap.newsletter article.work__item .scroll {
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
 }
-.work .work__wrap.newsletter article.work__item:nth-child(-n+3):hover figure img {
+.work .work__wrap.newsletter article.work__item:hover figure img {
   filter: brightness(1);
 }
 .work .work__wrap.greenbird article.work__item {
-  margin-top: -50px;
+  margin-top: -30px;
   height: 560px;
 }
 .work .work__wrap.greenbird article.work__item figure {
@@ -265,9 +276,8 @@ main section {
   transform: translate(-50%, -50%);
 }
 .work .work__wrap.daycare_banner article.work__item {
-  margin-top: -50px;
-  width: 780px;
-  height: 280px;
+  width: 940px;
+  height: 340px;
 }
 .work .work__wrap.daycare_banner article.work__item figure {
   width: 100%;

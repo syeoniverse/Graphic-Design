@@ -200,7 +200,7 @@ main {
 
     &.keeper-price {
       article.work__item {
-        margin-top: -30px;
+        margin-top: -50px;
         width: 600px;
         height: 600px;
         position: relative;
@@ -242,6 +242,12 @@ main {
       }
     }
 
+    &.margin {
+      article.work__item {
+        margin-top: -50px;
+      }
+    }
+
     &.keeper-leaflet {
       article.work__item {
         width: 630PX;
@@ -250,19 +256,8 @@ main {
 
     &.xg-poster {
       article.work__item {
-        margin-top: -50px;
-
-        &:hover {
-          margin-top: -70px;
-        }
-      }
-    }
-
-    &.newsletter {
-      article.work__item {
-        margin-top: -80px;
-        width: 400px;
-        height: 660px;
+        margin-top: -60px;
+        width: 460px;
 
         &:hover {
           margin-top: -100px;
@@ -272,16 +267,30 @@ main {
           width: 100%;
           height: 92%;
         }
+      }
+    }
 
-        //1번부터 3번까지
-        &:nth-child(-n+3) {
+    &.newsletter {
+      article.work__item {
+        margin-top: -80px;
+        width: 440px;
+        height: 600px;
+
+        &:hover {
+          margin-top: -80px;
+        }
+
+        figure {
+          width: 100%;
+          height: 92%;
+        }
           figure {
             overflow: scroll;
             -ms-overflow-style: none;
 
-            // img {
-            //   filter: brightness(0.5);
-            // }
+            img {
+              filter: brightness(0.7);
+            }
 
             &::-webkit-scrollbar {
               display: none;
@@ -300,13 +309,12 @@ main {
               }
             }
           }
-        }
       }
     }
 
     &.greenbird {
       article.work__item {
-        margin-top: -50px;
+        margin-top: -30px;
         height: 560px;
 
         figure {
@@ -388,9 +396,8 @@ main {
 
     &.daycare_banner {
       article.work__item {
-        margin-top: -50px;
-        width: 780px;
-        height: 280px;
+        width: 940px;
+        height: 340px;
 
         figure {
           width: 100%;

@@ -4,10 +4,6 @@ const intro = gsap.timeline()
 // intro.to('.t0', { opacity: 1, y: -100 })
 intro.to('.t1', { opacity: 1, y: -100 })
 intro.to('.t2', { opacity: 1, y: -100 })
-intro.to('.t3', { opacity: 1, y: -100 })
-intro.to('.t4', { opacity: 1, y: -100 })
-intro.to('.t5', { opacity: 1, y: -100 })
-intro.to('.t6', { opacity: 1, y: -100 })
 
 ScrollTrigger.create({
   animation: intro,

@@ -117,7 +117,7 @@ nav {
       position: absolute;
       top: 25px;
       transition: .3s;
-
+      border-radius: 100%;
     }
 
     .arrowhead {
@@ -129,33 +129,37 @@ nav {
     }
 
     p {
-      // position: absolute;
-      // left: 50%;
-      // right: 50%;
-      // transform: translate(-50%);
       opacity: 0;
       transition: .5s;
     }
 
     &.next {
       .arrow {
-        right: 30px;
+        right: 34px;
       }
 
       .arrowhead {
         transform: rotate(30deg);
-        right: 31px;
+        right: 34px;
+      }
+      p{
+        position: relative;
+        right: 10px;
       }
     }
 
     &.prev {
       .arrow {
-        left: 30px;
+        left: 34px;
       }
 
       .arrowhead {
         transform: rotate(-30deg);
-        left: 31px;
+        left: 34px;
+      }
+      p{
+        position: relative;
+        left: 10px;
       }
     }
 

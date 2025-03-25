@@ -85,6 +85,7 @@ nav a.prev .arrow {
   position: absolute;
   top: 25px;
   transition: 0.3s;
+  border-radius: 100%;
 }
 nav a.next .arrowhead,
 nav a.prev .arrowhead {
@@ -101,21 +102,31 @@ nav a.prev p {
 }
 nav a.next.next .arrow,
 nav a.prev.next .arrow {
-  right: 30px;
+  right: 34px;
 }
 nav a.next.next .arrowhead,
 nav a.prev.next .arrowhead {
   transform: rotate(30deg);
-  right: 31px;
+  right: 34px;
+}
+nav a.next.next p,
+nav a.prev.next p {
+  position: relative;
+  right: 10px;
 }
 nav a.next.prev .arrow,
 nav a.prev.prev .arrow {
-  left: 30px;
+  left: 34px;
 }
 nav a.next.prev .arrowhead,
 nav a.prev.prev .arrowhead {
   transform: rotate(-30deg);
-  left: 31px;
+  left: 34px;
+}
+nav a.next.prev p,
+nav a.prev.prev p {
+  position: relative;
+  left: 10px;
 }
 nav a.next:hover > .arrow,
 nav a.prev:hover > .arrow {

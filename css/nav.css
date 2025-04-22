@@ -144,6 +144,14 @@ nav a.prev:hover > p {
   transition-delay: 0.2s;
 }
 
+@media screen and (max-width: 660px) {
+  nav {
+    position: fixed;
+    bottom: 3%;
+    right: 50%;
+    transform: translate(50%);
+  }
+}
 @media screen and (max-width: 1000px) {
   footer ul li {
     font-size: 14px;

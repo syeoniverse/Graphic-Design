@@ -1,4 +1,4 @@
-const menu = ['About', 'Exhibition', 'Branding', 'Logo', 'Cardnews', 'Newsletter', 'PPT', 'leaflet']
+const menu = ['About', 'Branding', 'Exhibition', 'Logo', 'Cardnews', 'Newsletter', 'PPT', 'leaflet']
 
 var swiper = new Swiper("#wrap", {
     spaceBetween: 50,
